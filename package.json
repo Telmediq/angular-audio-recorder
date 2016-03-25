@@ -1,6 +1,6 @@
 {
   "name": "angular-audio-recorder",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Audio Recorder for AngularJS, works with mordern browsers supporting WebRTC microphone, older browsers with Flash installed and Cordova Media plugin",
   "devDependencies": {
     "gulp": "^3.9.0",

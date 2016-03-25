@@ -67,6 +67,8 @@ var RecorderController = function (element, service, recorderUtils, $scope, $tim
     var phase = $scope.$root.$$phase;
     if (phase !== '$apply' && phase !== '$digest') {
       return $scope.$apply(fn);
+    } else if (typeof fn === 'function') {
+      return fn();
     }
   };
 
@@ -288,18 +290,23 @@ var RecorderController = function (element, service, recorderUtils, $scope, $tim
       $interval.cancel(timing);
       status.isRecording = false;
       var finalize = function (inputBlob) {
-        control.audioModel = inputBlob;
+        scopeApply(function () {
+          control.audioModel = inputBlob;
+        });
         embedPlayer(inputBlob);
+
+        // A separate scope application is used because the onRecordComplete callback might want to use the recorded
+        // audio immediately - if the model set and the callback are done in the same digest cycle then the model isn't
+        // propagated up to the user's scope yet when the callback fires.
+        scopeApply(control.onRecordComplete);
       };
 
+      embedPlayer(null);
       if (shouldConvertToMp3) {
         doMp3Conversion(blob, finalize);
       } else {
-        finalize(blob)
+        finalize(blob);
       }
-
-      embedPlayer(null);
-      control.onRecordComplete();
     };
 
     //To stop recording
