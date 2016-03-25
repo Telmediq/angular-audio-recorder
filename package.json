@@ -1,8 +1,7 @@
 {
   "name": "angular-audio-recorder",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Audio Recorder for AngularJS, works with mordern browsers supporting WebRTC microphone, older browsers with Flash installed and Cordova Media plugin",
-  "main": "index.js",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
@@ -23,12 +22,14 @@
     "gulp-util": "^3.0.5",
     "run-sequence": "^1.1.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/logbon72/angular-recorder.git"
+    "url": "git+https://github.com/TelmedIQ/angular-audio-recorder.git"
+  },
+  "scripts": {
+    "prestart": "npm prune && npm install",
+    "postinstall": "bower prune && bower install && gulp build",
+    "start": "live-server --open=demo"
   },
   "keywords": [
     "audio-recorder",
@@ -41,7 +42,7 @@
   "author": "Joseph Orilogbon <joseph@intelworx.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/logbon72/angular-recorder/issues"
+    "url": "https://github.com/TelmedIQ/angular-audio-recorder/issues"
   },
-  "homepage": "https://github.com/logbon72/angular-recorder#readme"
+  "homepage": "https://github.com/TelmedIQ/angular-audio-recorder#readme"
 }

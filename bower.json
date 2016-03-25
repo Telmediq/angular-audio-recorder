@@ -1,7 +1,7 @@
 {
-  "name": "angularAudioRecorder",
+  "name": "angular-audio-recorder",
   "version": "1.4.3",
-  "homepage": "https://github.com/logbon72/angular-recorder",
+  "homepage": "https://github.com/TelmedIQ/angular-audio-recorder",
   "description": "AngularJS audio recorder supporting Cordova Media, HTML5 and Flash, forked from https://github.com/sathyapulse/angular-recorder",
   "license": "MIT",
   "dependencies": {

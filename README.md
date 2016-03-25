@@ -206,7 +206,6 @@ Since attributes passed to AngularJS directives are normalized, you should pass 
 
 ## Credits
 
- - This Repo was originally forked from https://github.com/sathyapulse/angular-recorder the structural changes were too much, I had to create a new project off it.
  - [RecorderJS](https://github.com/mattdiamond/Recorderjs)
  - [This article for RecordMp3Js] (http://audior.ec/blog/recording-mp3-using-only-html5-and-javascript-recordmp3-js/)
  - [LameJS](https://github.com/zhuker/lamejs)
