@@ -181,9 +181,6 @@ var RecorderController = function (element, service, recorderUtils, $scope, $tim
       status.playback = PLAYBACK.STOPPED;
     }
 
-    //clear audio previously recorded
-    control.audioModel = null;
-
     var id = control.id, recordHandler = service.getHandler();
     //Record initiation based on browser type
     var start = function () {
